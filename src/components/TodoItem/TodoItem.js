@@ -16,7 +16,13 @@ class TodoItem extends Component {
           readOnly
         />
         <div className={cx("text", { done })}>{children}</div>
-        <div className={cx("delete")} onClick={onRemove}>
+        <div
+          className={cx("delete")}
+          onClick={e => {
+            onRemove();
+            e.stopPropagation();
+          }}
+        >
           [지우기]
         </div>
       </div>
