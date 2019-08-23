@@ -3,14 +3,15 @@ import PageTemplate from "./PageTemplate/Index";
 import TodoInput from "./TodoInput/Index";
 import TodoList from "./TodoList/Index";
 
+const InitailTodos = new Array(500)
+  .fill(0)
+  .map((foo, index) => ({ id: index, text: `일정 ${index}`, done: false }));
+
 class App extends Component {
   state = {
     input: "",
     // Initail value
-    todos: [
-      { id: 0, text: "완료된 일정입니다.", done: true },
-      { id: 1, text: "예시 일정입니다.", done: false }
-    ]
+    todos: InitailTodos
   };
 
   //todo data id process
